@@ -1,0 +1,41 @@
+.DS_Store
+node_modules
+/dist
+
+/tests/e2e/videos/
+/tests/e2e/screenshots/
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# 自动导入插件创建的文件
+/components.d.ts
+/auto-imports.d.ts
+
+# webpack 配置文件查看
+/inspect.out.js
+
+# dev server log
+/dev-server.log
+
+# 备份文件
+__backup__

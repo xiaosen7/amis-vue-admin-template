@@ -1,0 +1,38 @@
+{
+  "type": "form",
+  "id": "u:a39d12a3b35d",
+  "title": "可在编辑器中注册组件源码在src/amis/plugins/CityRadiosPlugin.ts",
+  "body": [
+    {
+      "label": "文本框",
+      "type": "input-text",
+      "name": "text",
+      "id": "u:efae2579e6f1"
+    },
+    {
+      "type": "a-city-radios",
+      "id": "u:1ebee63226b4",
+      "name": "city",
+      "value": 0,
+      "source": {
+        "url": "get:/api/demo/city-options"
+      },
+      "label": "城市选择",
+      "required": true,
+      "description": "这是一段描述",
+      "placeholder": "可啦啦啦啦啦速度",
+      "className": "类ixng",
+      "inputClassName": "kongjianleiming",
+      "disabledOn": "",
+      "visible": true
+    },
+    {
+      "type": "a-hello-world",
+      "style": {
+        "fontFamily": "",
+        "fontSize": 56
+      }
+    }
+  ],
+  "debug": true
+}

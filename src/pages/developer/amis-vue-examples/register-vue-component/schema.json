@@ -1,0 +1,41 @@
+{
+  "type": "form",
+  "title": "实现功能：当 form.username 包含在 labelOption.includes 里面的时候，自动选择性别单选框；当点击单选框的时候，自动赋值 username",
+  "debug": true,
+  "body": [
+    {
+      "type": "input-text",
+      "name": "username",
+      "label": "姓名",
+      "id": "u:f84264f4e4dd",
+      "value": "小明"
+    },
+    {
+      "type": "a-automatic-choice",
+      "name": "choice",
+      "label": "性别(Vue组件)",
+      "value": 0,
+      "automaticName": "username",
+      "labelOptions": [
+        {
+          "text": "女性",
+          "label": 0,
+          "includes": [
+            "小红",
+            "小月"
+          ]
+        },
+        {
+          "text": "男性",
+          "label": 1,
+          "includes": [
+            "小明",
+            "小张"
+          ]
+        }
+      ],
+      "id": "u:2934f5e7447c"
+    }
+  ],
+  "id": "u:3dcd23ae4a62"
+}

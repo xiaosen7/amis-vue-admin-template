@@ -1,0 +1,4 @@
+- base：基本的样式代码存放目录，包括一些样式重置，标签通用样式等
+- object：css 原子样式存放目录，像 tailwindcss 这种
+- settings：存放样式变量或者页面样式设置项等
+- index.less：通过这个文件导出所有 styles 里的样式文件

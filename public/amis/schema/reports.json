@@ -1,0 +1,241 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "type": "crud",
+      "id": "u:1318f52166f9",
+      "api": "get:/json-server/reports",
+      "columns": [
+        {
+          "name": "year",
+          "label": "期数",
+          "id": "u:4b2b55074fd7",
+          "type": "mapping",
+          "map": {
+            "*": "${year}年第${issue}期 (总第${total}期)"
+          }
+        },
+        {
+          "label": "标题",
+          "name": "reportTitle",
+          "id": "u:99ff65d014f2"
+        },
+        {
+          "label": "发布时间",
+          "name": "releaseTime",
+          "id": "u:99ff65d014f2"
+        },
+        {
+          "label": "状态",
+          "id": "u:2673c7b6c8cd",
+          "type": "operation",
+          "buttons": [
+            {
+              "type": "mapping",
+              "name": "releaseStatus",
+              "map": {
+                "1": "已发布",
+                "*": {
+                  "label": "未发布",
+                  "type": "button",
+                  "actionType": "ajax",
+                  "level": "link",
+                  "confirmText": "确认要发布吗？",
+                  "api": "post:/json-server/reports/${id}",
+                  "id": "u:6f3cde9059f6"
+                }
+              },
+              "id": "u:85d34f3543b5"
+            },
+            {
+              "label": "更新发布",
+              "type": "button",
+              "level": "link",
+              "actionType": "dialog",
+              "dialog": {
+                "title": "更新发布",
+                "body": {
+                  "type": "form",
+                  "body": [
+                    {
+                      "type": "input-text",
+                      "name": "reportTitle",
+                      "label": "标题",
+                      "required": true
+                    },
+                    {
+                      "type": "input-text",
+                      "name": "keyword",
+                      "label": "关键字",
+                      "required": true
+                    },
+                    {
+                      "type": "input-text",
+                      "name": "year",
+                      "label": "期数",
+                      "required": true,
+                      "addOn": {
+                        "type": "text",
+                        "label": "年"
+                      }
+                    },
+                    {
+                      "type": "input-text",
+                      "name": "issue",
+                      "label": "第",
+                      "addOn": {
+                        "type": "text",
+                        "label": "期"
+                      }
+                    },
+                    {
+                      "type": "input-text",
+                      "name": "total",
+                      "label": "总第",
+                      "addOn": {
+                        "type": "text",
+                        "label": "期"
+                      }
+                    },
+                    {
+                      "label": "报告类型",
+                      "type": "select",
+                      "name": "reportType",
+                      "options": [
+                        {
+                          "label": "国内热点报告",
+                          "value": "1"
+                        },
+                        {
+                          "label": "国际热点报告",
+                          "value": "2"
+                        },
+                        {
+                          "label": "质量周报",
+                          "value": "3"
+                        }
+                      ],
+                      "required": true
+                    },
+                    {
+                      "name": "top",
+                      "type": "radios",
+                      "label": "置顶",
+                      "options": [
+                        {
+                          "label": "否",
+                          "value": "0"
+                        },
+                        {
+                          "label": "是",
+                          "value": "1"
+                        }
+                      ]
+                    }
+                  ],
+                  "api": "patch:/json-server/reports/${id}"
+                }
+              },
+              "id": "u:c6fd5f229780"
+            }
+          ]
+        },
+        {
+          "label": "操作",
+          "buttons": [
+            {
+              "type": "button",
+              "level": "link",
+              "label": "删除",
+              "actionType": "ajax",
+              "confirmText": "确认要删除吗？",
+              "api": "get:/json-server/reports/${id}",
+              "id": "u:041cf37dcf9e"
+            },
+            {
+              "label": "预览",
+              "type": "button",
+              "level": "link",
+              "actionType": "dialog",
+              "dialog": {
+                "title": "报告预览",
+                "body": [
+                  {
+                    "type": "iframe",
+                    "src": "http://10.168.0.26:8080/web/v1/report/preview/6347dd05bb9ff6336e8e202d",
+                    "height": 700
+                  }
+                ],
+                "size": "lg"
+              },
+              "id": "u:37619b82ad33"
+            },
+            {
+              "type": "button",
+              "level": "link",
+              "label": "下载",
+              "actionType": "url",
+              "id": "u:cf8a481657f2",
+              "url": "http://10.168.0.26:8080/web/v1/report/download/${id}"
+            }
+          ],
+          "type": "operation",
+          "id": "u:f3470aa97492"
+        }
+      ],
+      "filter": {
+        "body": [
+          {
+            "type": "group",
+            "body": [
+              {
+                "type": "input-datetime",
+                "label": "开始时间",
+                "name": "beginDate",
+                "id": "u:34ba59001afb",
+                "embed": false,
+                "inputFormat": "YYYY-MM-DD HH:mm:ss",
+                "format": "YYYY-MM-DD+HH:mm:ss",
+                "placeholder": "请选择日期以及时间",
+                "minDate": "",
+                "maxDate": "",
+                "value": "2022-10-01+00:00:00"
+              },
+              {
+                "type": "input-datetime",
+                "label": "结束时间",
+                "name": "endDate",
+                "id": "u:2d3b3490d4b4",
+                "embed": false,
+                "inputFormat": "YYYY-MM-DD HH:mm:ss",
+                "placeholder": "请选择日期以及时间",
+                "format": "YYYY-MM-DD+HH:mm:ss",
+                "minDate": "",
+                "maxDate": "",
+                "value": "2022-11-01+00:00:00"
+              }
+            ],
+            "id": "u:f71dc21b655d"
+          }
+        ],
+        "actions": [
+          {
+            "type": "reset",
+            "label": "重置",
+            "id": "u:72a7ac589f47"
+          },
+          {
+            "type": "submit",
+            "level": "primary",
+            "label": "查询",
+            "id": "u:d5c1fd94dabd"
+          }
+        ],
+        "id": "u:4b049fee8b26",
+        "debug": true
+      },
+      "syncLocation": false
+    }
+  ],
+  "id": "u:e1cb1bacd304"
+}

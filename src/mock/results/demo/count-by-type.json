@@ -1,0 +1,274 @@
+{
+  "code": 200,
+  "msg": "操作成功",
+  "data": {
+    "all": [
+      { "total": 2398, "eventLevel": "1" },
+      { "total": 1, "eventLevel": "3" },
+      { "total": 46, "eventLevel": "2" }
+    ],
+    "provinces": [
+      {
+        "total": 4,
+        "maxEventLevel": "0",
+        "eventProvince": "广东",
+        "_id": "广东",
+        "groupBy": [{ "eventLevel": "0", "count": 10 }]
+      },
+      {
+        "total": 4,
+        "maxEventLevel": "1",
+        "eventProvince": "天津市",
+        "_id": "天津市",
+        "groupBy": [{ "eventLevel": "1", "count": 9 }]
+      },
+      {
+        "total": 32,
+        "maxEventLevel": "1",
+        "eventProvince": "江苏省",
+        "_id": "江苏省",
+        "groupBy": [{ "eventLevel": "1", "count": 63 }]
+      },
+      {
+        "total": 38,
+        "maxEventLevel": "1",
+        "eventProvince": "山东省",
+        "_id": "山东省",
+        "groupBy": [{ "eventLevel": "1", "count": 75 }]
+      },
+      {
+        "total": 62,
+        "maxEventLevel": "1",
+        "eventProvince": "贵州省",
+        "_id": "贵州省",
+        "groupBy": [{ "eventLevel": "1", "count": 159 }]
+      },
+      {
+        "total": 79,
+        "maxEventLevel": "1",
+        "eventProvince": "河南省",
+        "_id": "河南省",
+        "groupBy": [{ "eventLevel": "1", "count": 167 }]
+      },
+      {
+        "total": 8,
+        "maxEventLevel": "2",
+        "eventProvince": "上海市",
+        "_id": "上海市",
+        "groupBy": [
+          { "eventLevel": "2", "count": 1 },
+          { "eventLevel": "1", "count": 15 }
+        ]
+      },
+      {
+        "total": 187,
+        "maxEventLevel": "1",
+        "eventProvince": "湖北省",
+        "_id": "湖北省",
+        "groupBy": [{ "eventLevel": "1", "count": 478 }]
+      },
+      {
+        "total": 40,
+        "maxEventLevel": "1",
+        "eventProvince": "广西壮族自治区",
+        "_id": "广西壮族自治区",
+        "groupBy": [{ "eventLevel": "1", "count": 94 }]
+      },
+      {
+        "total": 51,
+        "maxEventLevel": "1",
+        "eventProvince": "辽宁省",
+        "_id": "辽宁省",
+        "groupBy": [{ "eventLevel": "1", "count": 101 }]
+      },
+      {
+        "total": 153,
+        "maxEventLevel": "1",
+        "eventProvince": "云南省",
+        "_id": "云南省",
+        "groupBy": [{ "eventLevel": "1", "count": 373 }]
+      },
+      {
+        "total": 44,
+        "maxEventLevel": "1",
+        "eventProvince": "河北省",
+        "_id": "河北省",
+        "groupBy": [{ "eventLevel": "1", "count": 96 }]
+      },
+      {
+        "total": 328,
+        "maxEventLevel": "1",
+        "eventProvince": "四川省",
+        "_id": "四川省",
+        "groupBy": [
+          { "eventLevel": "2", "count": 1 },
+          { "eventLevel": "1", "count": 773 }
+        ]
+      },
+      {
+        "total": 96,
+        "maxEventLevel": "1",
+        "eventProvince": "新疆维吾尔自治区",
+        "_id": "新疆维吾尔自治区",
+        "groupBy": [{ "eventLevel": "1", "count": 219 }]
+      },
+      {
+        "total": 43,
+        "maxEventLevel": "1",
+        "eventProvince": "吉林省",
+        "_id": "吉林省",
+        "groupBy": [
+          { "eventLevel": "2", "count": 1 },
+          { "eventLevel": "1", "count": 105 }
+        ]
+      },
+      {
+        "total": 66,
+        "maxEventLevel": "1",
+        "eventProvince": "甘肃省",
+        "_id": "甘肃省",
+        "groupBy": [{ "eventLevel": "1", "count": 159 }]
+      },
+      {
+        "total": 10,
+        "maxEventLevel": "1",
+        "eventProvince": "宁夏回族自治区",
+        "_id": "宁夏回族自治区",
+        "groupBy": [{ "eventLevel": "1", "count": 23 }]
+      },
+      {
+        "total": 52,
+        "maxEventLevel": "3",
+        "eventProvince": "北京",
+        "_id": "北京",
+        "groupBy": [
+          { "eventLevel": "1", "count": 2 },
+          { "eventLevel": "2", "count": 118 },
+          { "eventLevel": "3", "count": 6 }
+        ]
+      },
+      {
+        "total": 139,
+        "maxEventLevel": "1",
+        "eventProvince": "浙江省",
+        "_id": "浙江省",
+        "groupBy": [{ "eventLevel": "1", "count": 283 }]
+      },
+      {
+        "total": 21,
+        "maxEventLevel": "1",
+        "eventProvince": "内蒙古自治区",
+        "_id": "内蒙古自治区",
+        "groupBy": [{ "eventLevel": "1", "count": 32 }]
+      },
+      {
+        "total": 42,
+        "maxEventLevel": "2",
+        "eventProvince": "西藏自治区",
+        "_id": "西藏自治区",
+        "groupBy": [
+          { "eventLevel": "2", "count": 1 },
+          { "eventLevel": "1", "count": 87 }
+        ]
+      },
+      {
+        "total": 36,
+        "maxEventLevel": "1",
+        "eventProvince": "广东省",
+        "_id": "广东省",
+        "groupBy": [{ "eventLevel": "1", "count": 71 }]
+      },
+      {
+        "total": 38,
+        "maxEventLevel": "1",
+        "eventProvince": "陕西省",
+        "_id": "陕西省",
+        "groupBy": [{ "eventLevel": "1", "count": 95 }]
+      },
+      {
+        "total": 43,
+        "maxEventLevel": "1",
+        "eventProvince": "黑龙江省",
+        "_id": "黑龙江省",
+        "groupBy": [{ "eventLevel": "1", "count": 105 }]
+      },
+      {
+        "total": 27,
+        "maxEventLevel": "1",
+        "eventProvince": "青海省",
+        "_id": "青海省",
+        "groupBy": [{ "eventLevel": "1", "count": 74 }]
+      },
+      {
+        "total": 116,
+        "maxEventLevel": "1",
+        "eventProvince": "湖南省",
+        "_id": "湖南省",
+        "groupBy": [{ "eventLevel": "1", "count": 319 }]
+      },
+      {
+        "total": 152,
+        "maxEventLevel": "1",
+        "eventProvince": "安徽省",
+        "_id": "安徽省",
+        "groupBy": [{ "eventLevel": "1", "count": 312 }]
+      },
+      {
+        "total": 78,
+        "maxEventLevel": "2",
+        "eventProvince": "",
+        "_id": "",
+        "groupBy": [
+          { "eventLevel": "2", "count": 6 },
+          { "eventLevel": "1", "count": 168 }
+        ]
+      },
+      {
+        "total": 138,
+        "maxEventLevel": "1",
+        "eventProvince": "江西省",
+        "_id": "江西省",
+        "groupBy": [{ "eventLevel": "1", "count": 288 }]
+      },
+      {
+        "total": 19,
+        "maxEventLevel": "1",
+        "eventProvince": "北京市",
+        "_id": "北京市",
+        "groupBy": [
+          { "eventLevel": "2", "count": 2 },
+          { "eventLevel": "1", "count": 28 }
+        ]
+      },
+      {
+        "total": 116,
+        "maxEventLevel": "1",
+        "eventProvince": "山西省",
+        "_id": "山西省",
+        "groupBy": [{ "eventLevel": "1", "count": 288 }]
+      },
+      {
+        "total": 54,
+        "maxEventLevel": "1",
+        "eventProvince": "福建省",
+        "_id": "福建省",
+        "groupBy": [{ "eventLevel": "1", "count": 90 }]
+      },
+      {
+        "total": 89,
+        "maxEventLevel": "1",
+        "eventProvince": "重庆市",
+        "_id": "重庆市",
+        "groupBy": [{ "eventLevel": "1", "count": 236 }]
+      },
+      {
+        "total": 55,
+        "maxEventLevel": "1",
+        "eventProvince": "海南省",
+        "_id": "海南省",
+        "groupBy": [{ "eventLevel": "1", "count": 157 }]
+      }
+    ]
+  },
+  "total": 0
+}

@@ -1,0 +1,184 @@
+{
+  "type": "crud",
+  "id": "u:1318f52166f9",
+  "api": {
+    "url": "/api/demo/questions",
+    "method": "get",
+    "messages": {},
+    "dataType": "form",
+    "adaptor": "let { code, data, total, msg } = payload;\n\nif (Array.isArray(data)) {\n  data = {\n    rows: data,\n    total\n  }\n}\n\nreturn {\n  status: code === 200 ? 0 : code,\n  msg,\n  data\n}"
+  },
+  "columns": [
+    {
+      "name": "eventTime",
+      "label": "提出时间",
+      "id": "u:4b2b55074fd7"
+    },
+    {
+      "name": "kcomment",
+      "label": "资料时间",
+      "id": "u:08f8f9f3d261"
+    },
+    {
+      "name": "eventTitle",
+      "label": "质量问题描述",
+      "id": "u:4b2b55074fd7",
+      "searchable": {
+        "type": "input-text",
+        "name": "kIndex",
+        "label": "搜索",
+        "placeholder": "输入质量问题描述"
+      }
+    },
+    {
+      "name": "qcFast",
+      "label": "级别",
+      "type": "tpl",
+      "tpl": "<span class='inline-block w-2 h-2 ${qcFast=='1' ? 'bg-gray-400' : 'bg-yellow-500'} rounded-full'></span>",
+      "id": "u:dc0275a571d2",
+      "style": {
+        "text-align": "center"
+      }
+    },
+    {
+      "name": "status",
+      "label": "处理状态",
+      "type": "mapping",
+      "map": {
+        "0": "<span class='text-blue-800'>未接手</span>",
+        "2": "<span class='text-success'>已关闭</span>",
+        "*": "未知"
+      },
+      "id": "u:d98cf1bdee10"
+    }
+  ],
+  "filter": {
+    "body": [
+      {
+        "type": "input-datetime",
+        "label": "起始时间",
+        "name": "startTime",
+        "embed": false,
+        "inputFormat": "YYYY-MM-DD HH:mm:ss",
+        "placeholder": "请选择日期以及时间",
+        "format": "YYYY-MM-DD+HH:mm:ss",
+        "minDate": "",
+        "maxDate": "",
+        "value": "",
+        "id": "u:594744236c4b"
+      },
+      {
+        "type": "input-datetime",
+        "label": "结束时间",
+        "name": "endTime",
+        "embed": false,
+        "inputFormat": "YYYY-MM-DD HH:mm:ss",
+        "placeholder": "请选择日期以及时间",
+        "format": "YYYY-MM-DD+HH:mm:ss",
+        "minDate": "",
+        "maxDate": "",
+        "value": "",
+        "id": "u:60c0257d93b3"
+      },
+      {
+        "type": "radios",
+        "name": "eventLevel",
+        "options": [
+          {
+            "label": "严重",
+            "value": "3"
+          },
+          {
+            "label": "关键",
+            "value": "2"
+          },
+          {
+            "label": "警告",
+            "value": "1"
+          },
+          {
+            "label": "全部",
+            "value": ""
+          }
+        ],
+        "id": "u:747c5f9ecbe0"
+      },
+      {
+        "type": "radios",
+        "label": "城市选择",
+        "name": "area",
+        "id": "u:c9b079eac510",
+        "source": {
+          "url": "/api/demo/count-by-type",
+          "method": "get",
+          "adaptor": "if (payload.code !== 200) {\n    return {\n      ...payload,\n      status: payload.code,\n    };\n  }\n\n  const options = [];\n  const { data } = payload;\n\n  const { all, provinces } = data;\n  if (all.length === 0 && provinces.length === 0) {\n    options.push(\n      {\n        label: '国外',\n        value: '国外',\n      },\n      {\n        label: '部门内',\n        value: '部门内',\n      },\n      {\n        label: '北京',\n        value: '北京',\n      },\n      {\n        label: '天津',\n        value: '天津',\n      },\n      {\n        label: '上海',\n        value: '上海',\n      },\n      {\n        label: '重庆',\n        value: '重庆',\n      },\n      {\n        label: '河北',\n        value: '河北',\n      },\n      {\n        label: '山西',\n        value: '山西',\n      },\n      {\n        label: '内蒙古',\n        value: '内蒙古',\n      },\n      {\n        label: '辽宁',\n        value: '辽宁',\n      },\n      {\n        label: '吉林',\n        value: '吉林',\n      },\n      {\n        label: '黑龙江',\n        value: '黑龙江',\n      },\n      {\n        label: '江苏',\n        value: '江苏',\n      },\n      {\n        label: '浙江',\n        value: '浙江',\n      },\n      {\n        label: '安徽',\n        value: '安徽',\n      },\n      {\n        label: '福建',\n        value: '福建',\n      },\n      {\n        label: '江西',\n        value: '江西',\n      },\n      {\n        label: '山东',\n        value: '山东',\n      },\n      {\n        label: '河南',\n        value: '河南',\n      },\n      {\n        label: '湖北',\n        value: '湖北',\n      },\n      {\n        label: '湖南',\n        value: '湖南',\n      },\n      {\n        label: '广东',\n        value: '广东',\n      },\n      {\n        label: '广西',\n        value: '广西',\n      },\n      {\n        label: '海南',\n        value: '海南',\n      },\n      {\n        label: '四川',\n        value: '四川',\n      },\n      {\n        label: '贵州',\n        value: '贵州',\n      },\n      {\n        label: '云南',\n        value: '云南',\n      },\n      {\n        label: '西藏',\n        value: '西藏',\n      },\n      {\n        label: '陕西',\n        value: '陕西',\n      },\n      {\n        label: '甘肃',\n        value: '甘肃',\n      },\n      {\n        label: '青海',\n        value: '青海',\n      },\n      {\n        label: '宁夏',\n        value: '宁夏',\n      },\n      {\n        label: '新疆',\n        value: '新疆',\n      }\n    );\n  } else {\n    options.push(\n      {\n        label: '国外' + ' ' + all[0].total,\n        value: '国外',\n      },\n      {\n        label: '部门内' + ' ' + all[1].total,\n        value: '部门内',\n      }\n    );\n\n    provinces.forEach((item) => {\n      if (!item.eventProvince) {\n        return;\n      }\n\n      if (item)\n        options.push({\n          label: item.eventProvince + ' ' + item.groupBy[0].count,\n          value: item.eventProvince,\n        });\n    });\n  }\n\n  return {\n    ...payload,\n    status: 0,\n    data: {\n      options,\n    },\n  };"
+        },
+        "value": "部门内"
+      },
+      {
+        "type": "list-select",
+        "label": "列表",
+        "name": "eventType",
+        "options": [
+          {
+            "label": "质量",
+            "id": "u:9fbeddaefb4d",
+            "value": "质量"
+          },
+          {
+            "label": "完整性",
+            "value": "完整性"
+          },
+          {
+            "label": "数据格式",
+            "value": "数据格式"
+          },
+          {
+            "label": "元数据",
+            "value": "元数据"
+          }
+        ],
+        "id": "u:e76651e3ef86",
+        "value": "质量"
+      },
+      {
+        "type": "service",
+        "body": [
+          {
+            "type": "tpl",
+            "tpl": "<p>近24小时新增 <span class='text-danger'>${add}</span> 个问题 未接手 <span class='text-secondary'>${disNotTake}</span> 个问题 已关闭 <span class='text-success'>${closed}</span> 个问题</p>",
+            "inline": false,
+            "id": "u:b6054f8516ae"
+          }
+        ],
+        "id": "u:8cc176ef2846",
+        "messages": {},
+        "api": {
+          "method": "get",
+          "url": "/api/demo/24h-increase"
+        },
+        "interval": ""
+      }
+    ],
+    "actions": [],
+    "id": "tianjing_questions_filter_form",
+    "debug": true,
+    "submitOnChange": true
+  },
+  "syncLocation": false,
+  "perPageAvailable": [10],
+  "messages": {},
+  "bulkActions": [
+    {
+      "label": "更新",
+      "actionType": "ajax",
+      "api": {
+        "url": "/api/demo/update-questions",
+        "method": "post",
+        "requestAdaptor": "api.data = api.body.items;\n return api"
+      },
+      "id": "u:384ab4726c61",
+      "level": "primary"
+    }
+  ]
+}

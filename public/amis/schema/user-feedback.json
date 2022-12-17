@@ -1,0 +1,111 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "type": "form",
+      "api": "post:/api/demo/use-feedback",
+      "title": "用户反馈",
+      "body": [
+        {
+          "type": "grid",
+          "columns": [
+            {
+              "body": [
+                {
+                  "type": "input-text",
+                  "name": "name",
+                  "label": "资料名称",
+                  "id": "u:3dddb8807de2",
+                  "required": true,
+                  "validateOnChange": true,
+                  "validations": {
+                    "maxLength": 5,
+                    "minLength": 3,
+                    "matchRegexp": "^1"
+                  }
+                },
+                {
+                  "type": "input-datetime",
+                  "label": "日期",
+                  "name": "date",
+                  "embed": false,
+                  "inputFormat": "YYYY-MM-DD HH:mm:ss",
+                  "placeholder": "请选择日期以及时间",
+                  "format": "X",
+                  "minDate": "",
+                  "maxDate": "",
+                  "id": "u:34c1587072fc",
+                  "value": "${NOW()}"
+                },
+                {
+                  "type": "textarea",
+                  "label": "问题描述",
+                  "name": "textarea",
+                  "minRows": 3,
+                  "maxRows": 20,
+                  "id": "u:c70a4deb997c"
+                }
+              ],
+              "id": "u:8f08874b71e0"
+            },
+            {
+              "body": [
+                {
+                  "type": "select",
+                  "label": "问题分类",
+                  "name": "select",
+                  "multiple": false,
+                  "id": "u:c410d9b9c362",
+                  "source": "get:/api/demo/selector",
+                  "value": "0"
+                },
+                {
+                  "type": "input-rating",
+                  "label": "问题紧急度",
+                  "name": "rating",
+                  "allowClear": false,
+                  "half": true,
+                  "colors": {
+                    "2": "#abadb1",
+                    "3": "#787b81",
+                    "5": "#ffa900"
+                  },
+                  "value": 3,
+                  "id": "u:fc8a75580fc8"
+                },
+                {
+                  "type": "input-file",
+                  "label": "附件",
+                  "name": "file",
+                  "receiver": {
+                    "url": "http://10.168.0.26:8080/web/userfeedback/v1/uploadFileWithOutId",
+                    "method": "post"
+                  },
+                  "btnLabel": "文件上传",
+                  "multiple": true,
+                  "uploadType": "fileReceptor",
+                  "proxy": false,
+                  "autoUpload": true,
+                  "useChunk": false,
+                  "accept": ".png,.img",
+                  "drag": false,
+                  "maxSize": 1024000,
+                  "id": "u:86d5aa84e139",
+                  "autoFill": {},
+                  "valueField": "fileId",
+                  "description": "仅支持.png,.img格式"
+                }
+              ],
+              "id": "u:329fc500bab5"
+            }
+          ],
+          "id": "u:c40d348cbc06"
+        }
+      ],
+      "id": "u:8123ad886425",
+      "debug": true,
+      "mode": "horizontal"
+    }
+  ],
+  "id": "u:713cd560b002"
+}

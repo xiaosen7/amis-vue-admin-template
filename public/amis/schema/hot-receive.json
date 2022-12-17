@@ -1,0 +1,90 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "type": "service",
+      "api": "get:/api/demo/hotReceive",
+      "body": [
+        {
+          "type": "container",
+          "body": [
+            {
+              "type": "tpl",
+              "className": "text-xl font-bold pl-4",
+              "id": "u:c2b1b03238a1",
+              "badge": {
+                "mode": "dot",
+                "text": 10,
+                "position": "top-left",
+                "offset": [0, 15],
+                "style": {
+                  "background": "#4a87fe",
+                  "width": "7px",
+                  "border-radius": 0,
+                  "height": "15px"
+                }
+              },
+              "tpl": "国内热点报告"
+            },
+            {
+              "type": "button",
+              "label": "更多",
+              "level": "link",
+              "size": "md",
+              "block": false,
+              "id": "u:b9effd79663b",
+              "actionType": "dialog",
+              "dialog": {
+                "title": "弹框标题",
+                "body": "这是一个弹框"
+              },
+              "className": "text-secondary"
+            }
+          ],
+          "id": "u:406f1f4c91ea",
+          "bodyClassName": "flex justify-between"
+        },
+        {
+          "type": "divider",
+          "id": "u:46e7a958b7d4",
+          "className": "mx-0.5 mb-1"
+        },
+        {
+          "type": "table",
+          "source": "$rows",
+          "rowClassNameExpr": "<%= Number(data.index) % 2 ? '' : 'bg-gray-50' %>",
+          "columns": [
+            {
+              "name": "reportTitle",
+              "id": "u:d49aedec89bb"
+            },
+            {
+              "name": "clicks",
+              "type": "tpl",
+              "id": "u:43e769b1fd09",
+              "tpl": "${DATE(dataTime)|date:MM-DD} <i class='far fa-eye'></i> ${clicks}"
+            }
+          ],
+          "id": "u:5aa165c8e74a",
+          "itemBadge": {
+            "text": "NEW",
+            "mode": "text",
+            "visibleOn": "this.top == 1",
+            "position": "top-left",
+            "offset": [10, 10],
+            "level": "info",
+            "style": {
+              "background-color": "rgba(0,0,0,0)",
+              "color": "#d90c10",
+              "text-shadow": "0 1px 2px grey",
+              "font-weight": 700,
+              "border": "none"
+            }
+          }
+        }
+      ],
+      "id": "u:7a3a1181aeb1"
+    }
+  ],
+  "id": "u:6988be30ef1c"
+}

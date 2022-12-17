@@ -1,0 +1,11 @@
+{
+  "type": "app",
+  "brandName": "气象数据质量问题快报",
+  "header": {
+    "type": "tpl",
+    "inline": false,
+    "className": "w-full",
+    "tpl": "<div class=\"flex justify-between\"><div>顶部区域左侧</div><div>顶部区域右侧</div></div>"
+  },
+  "api": "/json/amis/pages.json"
+}

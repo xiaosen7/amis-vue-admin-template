@@ -1,0 +1,12 @@
+build/
+coverage/
+dist/
+es/
+lib/
+node_modules
+**/\*.min.js
+**/_-min.js
+\*\*/_.bundle.js
+
+# 备份文件
+__backup__

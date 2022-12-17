@@ -1,0 +1,21 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "type": "service",
+      "schemaApi": "get:/amis/schema/hot-receive.json",
+      "id": "u:2d3fc8e5520f"
+    },
+    {
+      "type": "service",
+      "schemaApi": "get:/amis/schema/user-feedback.json",
+      "id": "u:05d4dbebd537"
+    },
+    {
+      "type": "service",
+      "schemaApi": "get:/amis/schema/questions.json",
+      "id": "u:bbe56b24c665"
+    }
+  ],
+  "id": "u:424c2bbb0ebf"
+}

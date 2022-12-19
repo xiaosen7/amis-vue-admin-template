@@ -1,5 +1,12 @@
 # amis-vue-admin-template
 
+## 启动
+
+```
+npm i
+npm run dev
+```
+
 ### TODO
 
 - [x] vscode 插件推荐
